@@ -82,6 +82,21 @@
       </p>
     </div>
 
+    <!-- THÔNG TIN BỆNH NHÂN -->
+    <div class="space-y-2">
+      <p class="section-label">Thông tin bệnh nhân</p>
+      <div class="bg-surface-container-low rounded-2xl border border-outline-variant/40 divide-y divide-outline-variant/30">
+        <div class="flex items-center justify-between px-4 py-3">
+          <span class="text-xs font-semibold uppercase tracking-wide text-outline">Họ và tên</span>
+          <span class="text-sm font-bold text-on-surface" id="detail-name">—</span>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3">
+          <span class="text-xs font-semibold uppercase tracking-wide text-outline">Số điện thoại</span>
+          <span class="text-sm font-bold text-on-surface" id="detail-phone">—</span>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Problem 3: Appointment details group ── -->
     <div class="space-y-2">
       <p class="section-label">Thông tin lịch hẹn</p>
@@ -129,9 +144,31 @@
       </div>
     </div>
 
-    <!-- ── Problem 2: Clearly visible "Quay về trang chủ" button ── -->
+    <!-- ĐỊA ĐIỂM PHÒNG KHÁM -->
+    <div class="space-y-2">
+      <p class="section-label">Địa điểm phòng khám</p>
+      <div class="bg-surface-container-low rounded-2xl border border-outline-variant/40 px-4 py-4">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[22px] mt-0.5" style="color:#087e8b;font-variation-settings:'FILL' 1;">pin_drop</span>
+          <div>
+            <p class="text-sm font-semibold text-on-surface">30 Đỗ Bá, Ngũ Hành Sơn</p>
+            <p class="text-xs text-on-surface-variant">Đà Nẵng, Việt Nam</p>
+            <a href="https://www.google.com/maps/search/30+%C4%90%E1%BB%97+B%C3%A1,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 mt-1 text-xs font-semibold hover:underline" style="color:#087e8b;">
+              Chỉ đường đến phòng khám
+              <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quay về trang chủ -->
     <a href="index.html"
-       class="block w-full text-center bg-primary-container hover:bg-primary text-white font-bold text-base rounded-xl py-4 transition-colors shadow-md">
+       class="block w-full text-center font-bold text-base rounded-xl py-4 transition-colors shadow-md text-white"
+       style="background:#087e8b;"
+       onmouseover="this.style.background='#00636e'" onmouseout="this.style.background='#087e8b'">
       Quay về trang chủ
     </a>
 
@@ -149,12 +186,24 @@
       confetti({ particleCount: 100, spread: 70, origin: { y: 0.4 } });
     }
 
-    // Read appointment info passed via sessionStorage (if index.html stored it)
+    // Read appointment info from sessionStorage saved by index.html
     try {
       const appt = JSON.parse(sessionStorage.getItem('appt') || '{}');
-      if (appt.ngayHen)  document.getElementById('detail-date').textContent    = appt.ngayHen;
-      if (appt.gioKham)  document.getElementById('detail-time').textContent    = appt.gioKham;
-      if (appt.dichVu)   document.getElementById('detail-service').textContent = appt.dichVu;
+
+      const set = (id, val) => { if (val) document.getElementById(id).textContent = val; };
+
+      // Patient info
+      set('detail-name',  appt.hoTen);
+      set('detail-phone', appt.soDienThoai);
+
+      // Appointment details — format date from YYYY-MM-DD → DD/MM/YYYY
+      if (appt.ngayHen) {
+        const parts = appt.ngayHen.split('-');
+        const formatted = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : appt.ngayHen;
+        document.getElementById('detail-date').textContent = formatted;
+      }
+      set('detail-time',    appt.gioKham);
+      set('detail-service', appt.dichVu);
     } catch(e) {}
   });
 </script>
