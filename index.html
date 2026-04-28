@@ -107,6 +107,16 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(240, 165, 0, 0.35);
   }
+  .cta-teal {
+    background-color: #087e8b;
+    color: white;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-teal:hover {
+    background-color: #00636e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 126, 139, 0.35);
+  }
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
@@ -517,14 +527,15 @@
             </div>
             <div class="space-y-2">
               <label class="text-xs font-semibold text-outline uppercase tracking-wider" data-cfg-text="contactSection.phoneLabel">Số điện thoại *</label>
-              <input id="contact-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="contactSection.phonePlaceholder" required type="tel"/>
+              <input id="contact-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="contactSection.phonePlaceholder" required type="tel" pattern="0[0-9]{9}"/>
+              <p id="contact-phone-error" class="hidden text-xs text-red-500 mt-1">Vui lòng nhập số điện thoại hợp lệ (10 số, bắt đầu bằng 0)</p>
             </div>
           </div>
           <div class="space-y-2">
             <label class="text-xs font-semibold text-outline uppercase tracking-wider" data-cfg-text="contactSection.reasonLabel">Lý do khám / Triệu chứng</label>
             <textarea id="contact-lyDo" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none h-32" placeholder="Ví dụ: Đau tai, ngạt mũi kéo dài..." data-cfg-attr-placeholder="contactSection.reasonPlaceholder"></textarea>
           </div>
-          <button class="cta-gold w-full py-4 rounded-xl font-bold text-lg" type="submit" data-cfg-text="contactSection.submit">Gửi yêu cầu đặt hẹn</button>
+          <button class="cta-teal w-full py-4 rounded-xl font-bold text-lg" type="submit" data-cfg-text="contactSection.submit">Gửi yêu cầu đặt hẹn</button>
         </form>
       </div>
       <div class="lg:col-span-5 space-y-6">
@@ -662,7 +673,8 @@
       </div>
       <div class="space-y-1.5">
         <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.phoneLabel">Số điện thoại *</label>
-        <input id="modal-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="modal.phonePlaceholder" required type="tel"/>
+        <input id="modal-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="modal.phonePlaceholder" required type="tel" pattern="0[0-9]{9}"/>
+        <p id="modal-phone-error" class="hidden text-xs text-red-500 mt-1">Vui lòng nhập số điện thoại hợp lệ (10 số, bắt đầu bằng 0)</p>
       </div>
       <div class="grid grid-cols-2 gap-4">
         <div class="space-y-1.5">
@@ -689,7 +701,7 @@
           <option>Họng - Thanh quản</option>
         </select>
       </div>
-      <button class="cta-gold w-full py-4 rounded-xl font-bold text-lg shadow-lg mt-4" type="submit" data-cfg-text="modal.submit">Xác nhận đặt lịch</button>
+      <button class="cta-teal w-full py-4 rounded-xl font-bold text-lg shadow-lg mt-4" type="submit" data-cfg-text="modal.submit">Xác nhận đặt lịch</button>
     </form>
   </div>
 </div>
@@ -1074,28 +1086,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }).catch(err => console.error('Sheet error:', err));
   };
 
+  const PHONE_RE = /^0[0-9]{9}$/;
+
   document.getElementById('modal-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    sendToSheet({
+    const phone = document.getElementById('modal-soDienThoai').value.trim();
+    const phoneErr = document.getElementById('modal-phone-error');
+    if (!PHONE_RE.test(phone)) {
+      phoneErr.classList.remove('hidden');
+      document.getElementById('modal-soDienThoai').focus();
+      return;
+    }
+    phoneErr.classList.add('hidden');
+    const data = {
       hoTen: document.getElementById('modal-hoTen').value,
-      soDienThoai: document.getElementById('modal-soDienThoai').value,
+      soDienThoai: phone,
       ngayHen: document.getElementById('modal-ngayHen').value,
       gioKham: document.getElementById('modal-gioKham').value,
       dichVu: document.getElementById('modal-dichVu').value
-    });
+    };
+    sendToSheet(data);
+    sessionStorage.setItem('appt', JSON.stringify(data));
     closeModal();
     showSuccess();
   });
 
   document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    sendToSheet({
+    const phone = document.getElementById('contact-soDienThoai').value.trim();
+    const phoneErr = document.getElementById('contact-phone-error');
+    if (!PHONE_RE.test(phone)) {
+      phoneErr.classList.remove('hidden');
+      document.getElementById('contact-soDienThoai').focus();
+      return;
+    }
+    phoneErr.classList.add('hidden');
+    const data = {
       hoTen: document.getElementById('contact-hoTen').value,
-      soDienThoai: document.getElementById('contact-soDienThoai').value,
+      soDienThoai: phone,
       ngayHen: '',
       gioKham: '',
       dichVu: document.getElementById('contact-lyDo').value
-    });
+    };
+    sendToSheet(data);
+    sessionStorage.setItem('appt', JSON.stringify(data));
     showSuccess();
   });
 
