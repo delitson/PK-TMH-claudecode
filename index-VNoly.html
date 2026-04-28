@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-cfg-text="pageTitle">Phòng Khám TMH ABC Đà Nẵng — Tai Mũi Họng Chuyên Khoa</title>
+<script src="siteConfig.js"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-tint": "#006874",
+          "primary": "#00636e",
+          "on-primary-container": "#eafcff",
+          "surface-container": "#ebeeef",
+          "surface-variant": "#dfe3e4",
+          "primary-container": "#087e8b",
+          "surface": "#f6fafb",
+          "on-surface-variant": "#3e494a",
+          "outline-variant": "#bdc8ca",
+          "on-surface": "#181c1d",
+          "on-background": "#181c1d",
+          "background": "#f6fafb",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "secondary": "#006b5c",
+          "secondary-fixed": "#5afbde",
+          "outline": "#6e797b",
+          "surface-dim": "#d7dbdb",
+          "on-secondary": "#ffffff",
+          "secondary-container": "#56f8db",
+          "inverse-primary": "#79d4e2",
+          "on-secondary-container": "#007060",
+          "surface-container-high": "#e5e9e9",
+          "on-primary-fixed": "#001f24",
+          "on-primary-fixed-variant": "#004f57",
+          "primary-fixed": "#96f0ff",
+          "surface-container-low": "#f1f4f5",
+          "surface-container-highest": "#dfe3e4",
+          "primary-fixed-dim": "#79d4e2",
+          "gold": "#F0A500",
+          "mint": "#00CFB4",
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          "2xl": "1rem",
+          "3xl": "1.5rem",
+          full: "9999px",
+        },
+        spacing: {
+          "bento-gap": "20px",
+          "section-padding": "96px",
+        },
+        fontFamily: {
+          "body-md": ["Inter"],
+          h2: ["Manrope"],
+          "body-lg": ["Inter"],
+          h1: ["Manrope"],
+          "label-caps": ["Inter"],
+          h3: ["Manrope"],
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+          h2: ["34px", { lineHeight: "1.25", fontWeight: "700" }],
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+          h1: ["52px", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+          h3: ["21px", { lineHeight: "1.4", fontWeight: "600" }],
+        },
+      },
+    },
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+  .aurora-mesh {
+    background: radial-gradient(at 0% 0%, #087e8b 0%, transparent 50%),
+                radial-gradient(at 100% 0%, #00cfb4 0%, transparent 50%),
+                radial-gradient(at 50% 100%, #ffffff 0%, transparent 50%);
+    background-color: #f6fafb;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(8, 126, 139, 0.08);
+  }
+  .clay-icon {
+    background: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1), inset -2px -5px 10px rgba(255,255,255,0.8), 5px 5px 15px rgba(0,0,0,0.05);
+    border-radius: 20px;
+  }
+  .cta-gold {
+    background-color: #f0a500;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(240, 165, 0, 0.35);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  /* Typography enhancements */
+  h1 { letter-spacing: -0.025em; }
+  h2 { letter-spacing: -0.015em; }
+  h3 { letter-spacing: -0.005em; }
+  p, li { line-height: 1.7; }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* H2 decorative accent — gạch chân ngắn dưới mọi tiêu đề section */
+  .h2-accent {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 18px;
+  }
+  .h2-accent::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 56px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #0F8E78 0%, #5BCDB0 100%);
+    transform: translateX(-50%);
+  }
+  .h2-accent--left::after { left: 0; transform: none; }
+
+  /* Logo */
+  .brand-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+  .brand-logo--lg { height: 56px; }
+  .brand-logo--xl { height: 72px; }
+
+  /* FABs — contrast cao, viền trắng, shadow rõ */
+  .fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(15, 23, 42, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  .fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28), 0 4px 10px rgba(15, 23, 42, 0.18);
+  }
+  .fab--book   { background: #F0A500; }
+  .fab--zalo   { background: #0068FF; }
+  .fab--phone  { background: #128C4A; }   /* xanh đậm hơn để tương phản cao với nền */
+  .fab-label {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    background: #181c1d;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .fab-wrap { position: relative; }
+  .fab-wrap:hover .fab-label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  /* Review card gradient border */
+  .review-gradient-border {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(#ffffff, #ffffff) padding-box,
+      linear-gradient(135deg, #1BA58E 0%, #F5A623 100%) border-box;
+  }
+
+  /* Stats row */
+  .stat-num {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/80 shadow-sm transition-all duration-300">
+  <div class="flex justify-between items-center px-8 py-3 w-full max-w-7xl mx-auto font-semibold tracking-tight">
+    <!-- FIX 3: Brand logo + tên -->
+    <a href="#" class="flex items-center gap-3 group">
+      <img src="LOGO%20TMH_1@3x.png" alt="Phòng Khám TMH ABC" class="brand-logo group-hover:scale-105 transition-transform" data-cfg-attr-src="brand.logo" data-cfg-attr-alt="brand.logoAlt"/>
+      <div class="leading-tight hidden sm:block">
+        <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-container/80" data-cfg-text="brand.namePrefix">Phòng Khám</div>
+        <div class="text-base font-extrabold text-teal-800 -mt-0.5">
+          <span data-i18n="brand_vn" data-cfg-text="brand.name">TAI MŨI HỌNG ABC</span>
+        </div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-8">
+      <a class="text-slate-600 hover:text-teal-600 transition-all" data-i18n="nav_services" data-cfg-text="nav.services" href="#services">Dịch vụ</a>
+      <a class="text-slate-600 hover:text-teal-600 transition-all" data-i18n="nav_team" data-cfg-text="nav.team" href="#team">Đội ngũ</a>
+      <a class="text-slate-600 hover:text-teal-600 transition-all" data-i18n="nav_contact" data-cfg-text="nav.contact" href="#contact">Liên hệ</a>
+      <div class="flex items-center space-x-2 bg-surface-container rounded-full px-3 py-1 cursor-pointer hover:bg-slate-200 transition-colors" id="lang-toggle">
+        <span class="vn-label text-xs font-bold text-primary" data-cfg-text="nav.langVN">VN</span>
+        <span class="text-xs text-outline">/</span>
+        <span class="en-label text-xs font-bold text-outline" data-cfg-text="nav.langEN">EN</span>
+      </div>
+    </nav>
+    <button class="cta-gold px-6 py-2 rounded-full font-bold open-modal-btn" data-i18n="nav_book" data-cfg-text="nav.book">Đặt lịch</button>
+  </div>
+</header>
+
+<main class="pt-20">
+
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="aurora-mesh relative min-h-[880px] flex flex-col items-center justify-center text-center px-6 overflow-hidden pb-44 lg:pb-48">
+    <div class="max-w-4xl z-10 space-y-7">
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="bg-white/85 backdrop-blur-md text-slate-800 px-5 py-2 rounded-full text-sm font-bold shadow-sm flex items-center gap-1.5 border border-white">
+          <span class="material-symbols-outlined text-yellow-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span> <span data-cfg-text="stats.heroBadgeRating">4.9 / 5 — 149+ đánh giá Google</span>
+        </span>
+        <span class="bg-white/85 backdrop-blur-md text-primary px-5 py-2 rounded-full text-sm font-bold shadow-sm flex items-center gap-1.5 border border-white/50">
+          <span class="material-symbols-outlined text-[18px]">schedule</span> <span data-cfg-text="hours.heroBadge">Mở 17:00–21:00 mỗi ngày</span>
+        </span>
+      </div>
+
+      <h1 class="font-h1 text-[44px] md:text-[56px] font-bold text-on-background max-w-3xl mx-auto leading-[1.15] tracking-tight">
+        <span class="text-[#087E8B]" data-i18n="hero_title" data-cfg-text="hero.title">PHÒNG KHÁM TAI MŨI HỌNG ABC</span><br/>
+        <span class="text-primary-container italic font-medium text-[28px] md:text-[34px]" data-i18n="hero_subtitle" data-cfg-text="hero.subtitle">Đồng hành chăm sóc - An tâm điều trị</span>
+      </h1>
+      <p class="text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed" data-i18n="hero_desc" data-cfg-text="hero.description">
+        Chuyên khoa Tai Mũi Họng hàng đầu tại Đà Nẵng. Công nghệ nội soi Olympus hiện đại, điều trị tận tâm cho cả người lớn và trẻ em.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="cta-gold px-10 py-4 rounded-full font-bold text-base shadow-lg open-modal-btn" data-i18n="hero_book" data-cfg-text="cta.bookNow">Đặt lịch ngay</button>
+        <button class="bg-white border-2 border-primary-container text-primary-container px-10 py-4 rounded-full font-bold text-base hover:bg-primary-container hover:text-white transition-colors flex items-center gap-2 justify-center" data-cfg-call-btn="1" onclick="window.location.href='tel:0856983929'">
+          <span class="material-symbols-outlined">call</span>
+          <span data-i18n="hero_call" data-cfg-text="cta.callPhone">Gọi: 0856 983 929</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FIX 2: Hero quick-book form — responsive, không bị cắt -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4">
+      <div class="glass-card p-6 rounded-3xl">
+        <!-- Desktop: 5 cột -->
+        <div class="hidden lg:grid grid-cols-5 gap-4 items-end">
+          <div class="space-y-2 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.nameLabel">Họ Tên</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" placeholder="Nguyễn Văn A" data-cfg-attr-placeholder="heroForm.namePlaceholder" required type="text"/>
+          </div>
+          <div class="space-y-2 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.phoneLabel">Điện thoại</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" placeholder="0856 983 929" data-cfg-attr-placeholder="heroForm.phonePlaceholder" required type="tel"/>
+          </div>
+          <div class="space-y-2 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.dateLabel">Ngày hẹn</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" type="date"/>
+          </div>
+          <!-- FIX 6: 4 options đồng nhất -->
+          <div class="space-y-2 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.serviceLabel">Dịch vụ</label>
+            <select class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" data-cfg-options="serviceOptions">
+              <option>Khám tổng quát</option>
+              <option>Nội soi TMH</option>
+              <option>Điều trị Tai</option>
+              <option>Họng - Thanh quản</option>
+            </select>
+          </div>
+          <div>
+            <button class="cta-gold w-full py-3 rounded-xl font-bold text-sm hero-confirm-btn" data-cfg-text="cta.confirmDesktop">Xác nhận</button>
+          </div>
+        </div>
+        <!-- Mobile: 2 cột -->
+        <div class="grid lg:hidden grid-cols-2 gap-3">
+          <div class="space-y-1.5 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.nameLabelMobile">Họ Tên *</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" placeholder="Nguyễn Văn A" data-cfg-attr-placeholder="heroForm.namePlaceholder" required type="text"/>
+          </div>
+          <div class="space-y-1.5 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.phoneLabelMobile">Điện thoại *</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" placeholder="0856 983 929" data-cfg-attr-placeholder="heroForm.phonePlaceholder" required type="tel"/>
+          </div>
+          <div class="space-y-1.5 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.dateLabel">Ngày hẹn</label>
+            <input class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" type="date"/>
+          </div>
+          <div class="space-y-1.5 text-left">
+            <label class="text-xs font-semibold text-outline block ml-1" data-cfg-text="heroForm.serviceLabel">Dịch vụ</label>
+            <select class="w-full bg-white/40 border border-outline-variant/50 rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none text-sm" data-cfg-options="serviceOptions">
+              <option>Khám tổng quát</option>
+              <option>Nội soi TMH</option>
+              <option>Điều trị Tai</option>
+              <option>Họng - Thanh quản</option>
+            </select>
+          </div>
+          <div class="col-span-2">
+            <button class="cta-gold w-full py-3 rounded-xl font-bold text-sm hero-confirm-btn" data-cfg-text="cta.confirmMobile">Xác nhận đặt lịch</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ TRUST BAR ═══════════════════════════════════════ -->
+  <section class="bg-on-surface py-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white">
+      <div class="flex items-center gap-3">
+        <span class="stat-num text-mint flex items-baseline gap-1.5">
+          <span data-cfg-text="stats.rating">4.9</span>
+          <span class="material-symbols-outlined text-yellow-400 text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+        </span>
+        <span class="text-sm text-white/70 font-medium leading-tight" data-cfg-html="stats.trustReviewsHtml">149+ Đánh giá<br/>trên Google</span>
+      </div>
+      <div class="h-10 w-px bg-white/15 hidden md:block"></div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-3xl text-mint">verified_user</span>
+        <span class="font-bold text-sm md:text-base" data-cfg-text="stats.trustCertified">Chứng chỉ Bộ Y tế Việt Nam</span>
+      </div>
+      <div class="h-10 w-px bg-white/15 hidden md:block"></div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-3xl text-mint">calendar_month</span>
+        <span class="font-bold text-sm md:text-base" data-cfg-text="stats.trustSchedule">Mở 7 ngày/tuần · 17:00–21:00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SERVICES ═══════════════════════════════════════ -->
+  <section class="py-section-padding max-w-7xl mx-auto px-8" id="services">
+    <div class="mb-16 text-center">
+      <h2 class="text-h2 font-h2 text-primary-container mb-4 h2-accent" data-cfg-text="servicesSection.heading">Dịch vụ tại Phòng Khám Tai Mũi Họng ABC</h2>
+      <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto mt-4" data-cfg-text="servicesSection.subtitle">Phác đồ điều trị hiện đại, thiết bị chuẩn quốc tế mang lại kết quả chính xác nhất.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-bento-gap">
+      <div class="md:col-span-2 glass-card p-10 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+        <div class="z-10 relative">
+          <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
+            <span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;" data-cfg-text="services.0.icon">hearing</span>
+          </div>
+          <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.0.title">Khám &amp; Điều Trị Tai</h3>
+          <p class="text-base text-on-surface-variant max-w-md" data-cfg-text="services.0.description">Điều trị viêm tai giữa, ù tai, nghe kém ở người già và trẻ em bằng công nghệ vi phẫu hiện đại.</p>
+          <ul class="mt-6 space-y-2 text-sm font-semibold text-primary">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> <span data-cfg-text="services.0.features.0">Đo thính lực chuẩn xác</span></li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> <span data-cfg-text="services.0.features.1">Vệ sinh tai bằng máy hút</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+          <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.1.icon">air</span>
+        </div>
+        <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.1.title">Mũi - Xoang</h3>
+        <p class="text-base text-on-surface-variant" data-cfg-text="services.1.description">Điều trị viêm xoang mạn tính, polyp mũi, lệch vách ngăn bằng nội soi.</p>
+      </div>
+      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+          <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.2.icon">voice_over_off</span>
+        </div>
+        <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.2.title">Họng - Thanh quản</h3>
+        <p class="text-base text-on-surface-variant" data-cfg-text="services.2.description">Cắt Amidan, nạo VA bằng phương pháp Coblator ít đau, phục hồi nhanh.</p>
+      </div>
+      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+          <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.3.icon">videocam</span>
+        </div>
+        <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.3.title">Nội soi TMH</h3>
+        <p class="text-base text-on-surface-variant" data-cfg-text="services.3.description">Sử dụng ống nội soi mềm Olympus mang lại hình ảnh sắc nét, không gây khó chịu.</p>
+      </div>
+      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+          <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.4.icon">neurology</span>
+        </div>
+        <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.4.title">Điều trị chuyên sâu</h3>
+        <p class="text-base text-on-surface-variant" data-cfg-text="services.4.description">Tư vấn và điều trị các bệnh lý phức tạp vùng đầu mặt cổ.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ GALLERY ═══════════════════════════════════════ -->
+  <!-- THAY ĐỔI 2: Thêm heading trên gallery -->
+  <section class="bg-surface-container-low py-section-padding mt-6">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-12 text-center">
+        <h2 class="text-h2 font-h2 text-primary-container mb-3 h2-accent" data-cfg-text="facilitySection.heading">Giới Thiệu Phòng Khám Của Chúng Tôi</h2>
+      </div>
+      <div class="relative aspect-video w-full rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/olBeDdKXGQ0?rel=0"
+          data-cfg-attr-src="facilitySection.videoEmbedSrc"
+          title="Phòng Khám TMH ABC — Cơ sở vật chất &amp; thiết bị"
+          data-cfg-attr-title="facilitySection.videoTitle"
+          frameborder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ TEAM ═══════════════════════════════════════ -->
+  <section class="py-section-padding max-w-7xl mx-auto px-8" id="team">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="glass-card border border-white/60 p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-20 h-20 flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;" data-cfg-text="team.0.icon">verified_user</span>
+        </div>
+        <h3 class="text-xl font-bold text-on-surface mb-3" data-cfg-text="team.0.title">Chứng chỉ Bộ Y tế</h3>
+        <p class="text-base leading-relaxed text-on-surface-variant" data-cfg-text="team.0.description">100% bác sĩ được cấp chứng chỉ hành nghề chuyên khoa Tai Mũi Họng theo tiêu chuẩn Bộ Y tế Việt Nam.</p>
+      </div>
+      <div class="glass-card border border-white/60 p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-20 h-20 flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;" data-cfg-text="team.1.icon">public</span>
+        </div>
+        <h3 class="text-xl font-bold text-on-surface mb-3" data-cfg-text="team.1.title">Phác đồ Quốc tế</h3>
+        <p class="text-base leading-relaxed text-on-surface-variant" data-cfg-text="team.1.description">Áp dụng phác đồ điều trị cập nhật theo tiêu chuẩn AAO-HNS (Hội TMH Hoa Kỳ) và WHO.</p>
+      </div>
+      <div class="glass-card border border-white/60 p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-20 h-20 flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;" data-cfg-text="team.2.icon">emoji_events</span>
+        </div>
+        <h3 class="text-xl font-bold text-on-surface mb-3" data-cfg-text="team.2.title">1.300+ Khách hàng</h3>
+        <p class="text-base leading-relaxed text-on-surface-variant" data-cfg-text="team.2.description">Hơn 500 ca nội soi và điều trị thành công, tỷ lệ hài lòng trên 97% theo khảo sát bệnh nhân.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ REVIEWS ═══════════════════════════════════════ -->
+  <!-- FIX 1: Review cards — nền sáng, text tối, thêm stars + avatar + date + badge Google -->
+  <section class="bg-surface-container-low py-section-padding">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-[0.15em] text-secondary bg-secondary/10 px-4 py-1.5 rounded-full mb-4" data-cfg-text="reviewsSection.tagline">CẢM NHẬN BỆNH NHÂN</span>
+          <h2 class="text-h2 font-h2 text-on-surface mb-4 h2-accent h2-accent--left" data-cfg-text="reviewsSection.heading">Khách hàng nói gì?</h2>
+          <div class="flex items-center gap-2 mt-4">
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-lg font-bold" data-cfg-text="stats.reviewsRatingBadge">4.9/5</span>
+            <div class="flex text-yellow-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="text-outline text-sm" data-cfg-text="stats.reviewsGoogleNote">trên Google Maps</span>
+          </div>
+        </div>
+        <!-- FIX 5: Dead link → link thật Google Maps -->
+        <a href="https://maps.app.goo.gl/search/Phòng+khám+TMH+ABC+Đà+Nẵng" data-cfg-attr-href="contact.mapsUrl" target="_blank" rel="noopener" class="text-primary border-b-2 border-primary/40 pb-1 font-semibold hover:text-teal-600 transition-colors flex items-center gap-1">
+          <span data-cfg-text="cta.viewAllReviews">Xem tất cả đánh giá</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Review Card 1 -->
+        <div class="review-gradient-border p-8 rounded-3xl shadow-sm hover:-translate-y-1 transition-transform duration-300 relative">
+          <!-- Badge Google -->
+          <div class="absolute top-5 right-5 bg-white border border-slate-200 rounded-full px-2 py-0.5 flex items-center gap-1 shadow-sm">
+            <svg class="w-3 h-3" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span class="text-[10px] font-bold text-slate-500" data-cfg-text="reviewsSection.googleLabel">Google</span>
+          </div>
+          <!-- Stars -->
+          <div class="flex text-yellow-400 mb-4">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-slate-700 italic mb-6 leading-relaxed" data-cfg-text="reviews.0.quote">"Tôi đến đây khi đang rất khó chịu vì viêm amidan mãn tính tái phát. Bác sĩ thăm khám kỹ lưỡng bằng thiết bị hiện đại, kê đơn chính xác và tôi khỏi hoàn toàn sau 1 tuần. Điều đặc biệt là phòng khám còn gọi hỏi thăm sau 3 ngày — điều tôi chưa từng gặp ở đâu. Rất biết ơn!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+            <div>
+              <p class="font-bold text-slate-800" data-cfg-text="reviews.0.name">Nikita Zhukov</p>
+              <p class="text-xs text-slate-400" data-cfg-review-meta="0">Đà Nẵng · Tháng 1/2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="review-gradient-border p-8 rounded-3xl shadow-sm hover:-translate-y-1 transition-transform duration-300 relative">
+          <div class="absolute top-5 right-5 bg-white border border-slate-200 rounded-full px-2 py-0.5 flex items-center gap-1 shadow-sm">
+            <svg class="w-3 h-3" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span class="text-[10px] font-bold text-slate-500" data-cfg-text="reviewsSection.googleLabel">Google</span>
+          </div>
+          <div class="flex text-yellow-400 mb-4">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-slate-700 italic mb-6 leading-relaxed" data-cfg-text="reviews.1.quote">"Con trai tôi bị đau tai nặng, đến đây được khám nhanh và chuyên nghiệp. Bác sĩ chẩn đoán đúng, điều trị không dư thừa và bé khỏi hoàn toàn sau 1 tuần. Ấn tượng nhất là phòng khám gọi hỏi thăm sau đó — điều này chưa bao giờ xảy ra với chúng tôi. Tôi thực sự tin tưởng giới thiệu nơi này."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+            <div>
+              <p class="font-bold text-slate-800" data-cfg-text="reviews.1.name">Александр А.</p>
+              <p class="text-xs text-slate-400" data-cfg-review-meta="1">Quảng Nam · Tháng 2/2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="review-gradient-border p-8 rounded-3xl shadow-sm hover:-translate-y-1 transition-transform duration-300 relative">
+          <div class="absolute top-5 right-5 bg-white border border-slate-200 rounded-full px-2 py-0.5 flex items-center gap-1 shadow-sm">
+            <svg class="w-3 h-3" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span class="text-[10px] font-bold text-slate-500" data-cfg-text="reviewsSection.googleLabel">Google</span>
+          </div>
+          <div class="flex text-yellow-400 mb-4">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-slate-700 italic mb-6 leading-relaxed" data-cfg-text="reviews.2.quote">"Cháu nhà tôi rất sợ đi khám nhưng bác sĩ rất khéo. Nội soi nhanh và bé hợp tác tốt. Rất an tâm khi khám ở đây."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+            <div>
+              <p class="font-bold text-slate-800" data-cfg-text="reviews.2.name">Chị Lan Hương</p>
+              <p class="text-xs text-slate-400" data-cfg-review-meta="2">Đà Nẵng · Tháng 1/2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+  <section class="py-section-padding max-w-7xl mx-auto px-8" id="contact">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-7 glass-card p-10 rounded-3xl">
+        <h2 class="text-h3 font-h3 mb-6 text-primary" data-cfg-text="contactSection.formHeading">Liên hệ &amp; Đặt hẹn Chi tiết</h2>
+        <form class="space-y-6" id="contact-form">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-xs font-semibold text-outline uppercase tracking-wider" data-cfg-text="contactSection.nameLabel">Họ và Tên *</label>
+              <input id="contact-hoTen" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none" placeholder="Nguyễn Văn A" data-cfg-attr-placeholder="contactSection.namePlaceholder" required type="text"/>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-semibold text-outline uppercase tracking-wider" data-cfg-text="contactSection.phoneLabel">Số điện thoại *</label>
+              <input id="contact-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="contactSection.phonePlaceholder" required type="tel"/>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-semibold text-outline uppercase tracking-wider" data-cfg-text="contactSection.reasonLabel">Lý do khám / Triệu chứng</label>
+            <textarea id="contact-lyDo" class="w-full bg-white/50 border border-outline-variant rounded-xl p-4 focus:ring-2 focus:ring-primary-container outline-none h-32" placeholder="Ví dụ: Đau tai, ngạt mũi kéo dài..." data-cfg-attr-placeholder="contactSection.reasonPlaceholder"></textarea>
+          </div>
+          <button class="cta-gold w-full py-4 rounded-xl font-bold text-lg" type="submit" data-cfg-text="contactSection.submit">Gửi yêu cầu đặt hẹn</button>
+        </form>
+      </div>
+      <div class="lg:col-span-5 space-y-6">
+        <div class="glass-card p-8 rounded-3xl">
+          <h3 class="text-h3 font-h3 text-primary mb-4" data-cfg-text="quickSupport.heading">Hỗ trợ nhanh</h3>
+          <div class="space-y-4">
+            <a class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl border border-white hover:bg-white transition-colors" href="https://zalo.me/0856983929" data-cfg-attr-href="contact.zaloUrl" target="_blank">
+              <div class="w-10 h-10 bg-[#0068ff] rounded-xl flex items-center justify-center text-white font-bold text-sm">Z</div>
+              <div>
+                <p class="font-bold" data-cfg-text="quickSupport.zaloLabel">Zalo: Phòng khám TMH ABC</p>
+                <p class="text-xs text-outline" data-cfg-text="quickSupport.zaloNote">Nhắn tin đặt lịch nhanh</p>
+              </div>
+            </a>
+            <a class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl border border-white hover:bg-white transition-colors" href="tel:0856983929" data-cfg-attr-href="contact.phoneHref">
+              <span class="material-symbols-outlined text-4xl text-green-600">call</span>
+              <div>
+                <p class="font-bold" data-cfg-text="quickSupport.hotlineLabel">Hotline: 0856 983 929</p>
+                <p class="text-xs text-outline" data-cfg-text="quickSupport.hotlineNote">Gặp trực tiếp tư vấn viên</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="glass-card p-8 rounded-3xl">
+          <h3 class="text-h3 font-h3 text-on-surface mb-4" data-cfg-text="hoursCard.heading">Giờ làm việc</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between border-b border-outline-variant/30 pb-2">
+              <span class="font-semibold" data-cfg-text="hoursCard.days">Thứ 2 — Chủ nhật</span>
+              <span class="text-primary font-bold" data-cfg-text="hoursCard.schedule">17:00 – 21:00</span>
+            </div>
+            <p class="text-xs text-outline pt-1" data-cfg-text="hoursCard.note">Lưu ý: Quý khách vui lòng đặt lịch trước để tránh chờ đợi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="mt-12 flex flex-col md:flex-row rounded-[40px] overflow-hidden glass-card">
+      <div class="md:w-3/5 h-[400px] w-full">
+        <iframe allowfullscreen height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.110332822556!2d108.24357637583688!3d16.05976508461706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177f0a8d6715%3A0x673993414918e77a!2zMzAgxJDhu5YgQsOhLCBC4bqvYyBN4bu5IFBow7osIE5nxakgSGFuaCBTxqFuLCDEkMOgIE7hurVuZyA1NTAwMDAsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1715852434567!5m2!1sen!2s"
+          data-cfg-attr-src="contact.mapEmbedSrc"
+          style="border:0;" width="100%"></iframe>
+      </div>
+      <div class="md:w-2/5 p-12 flex flex-col justify-center">
+        <h3 class="text-h3 font-h3 mb-6" data-cfg-text="locationCard.heading">Vị trí của chúng tôi</h3>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary-container">pin_drop</span>
+            <div>
+              <p class="font-bold text-lg" data-cfg-text="locationCard.addressLine1">30 Đỗ Bá, Ngũ Hành Sơn</p>
+              <p class="text-on-surface-variant" data-cfg-text="locationCard.addressLine2">Đà Nẵng, Việt Nam</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary-container">near_me</span>
+            <p class="text-on-surface-variant" data-cfg-text="locationCard.note">Cách Cầu Rồng 5 phút di chuyển. Có chỗ đỗ xe ô tô rộng rãi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<!-- FIX 3, 4, 5 -->
+<footer class="w-full border-t border-slate-200 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-10 py-14">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+      <div class="space-y-4 max-w-sm">
+        <div class="flex items-center gap-3">
+          <img src="LOGO%20TMH_1@3x.png" alt="Phòng Khám TMH ABC" class="brand-logo--lg" data-cfg-attr-src="brand.logo" data-cfg-attr-alt="brand.logoAlt"/>
+          <div class="leading-tight">
+            <div class="text-[10px] font-extrabold uppercase tracking-[0.18em] text-primary-container" data-cfg-text="brand.namePrefix">Phòng Khám</div>
+            <div class="text-lg font-black text-teal-900" data-cfg-text="brand.name">TAI MŨI HỌNG ABC</div>
+          </div>
+        </div>
+        <p class="text-slate-700 text-sm leading-relaxed font-medium"><span data-cfg-text="footer.descriptionPrefix">Chuyên khoa Tai Mũi Họng tại Đà Nẵng — </span><em class="text-primary-container font-bold not-italic" data-cfg-text="footer.descriptionEm">Đồng hành chăm sóc, an tâm điều trị.</em></p>
+      </div>
+      <div class="flex flex-col gap-2 text-sm text-slate-800 font-semibold">
+        <p class="font-bold text-slate-900" data-cfg-text="footer.contactHeading">Liên hệ</p>
+        <a href="tel:0856983929" data-cfg-attr-href="contact.phoneHref" class="hover:text-teal-600 transition-colors">📞 <span data-cfg-text="contact.phone">0856 983 929</span></a>
+        <a href="https://zalo.me/0856983929" data-cfg-attr-href="contact.zaloUrl" target="_blank" class="hover:text-teal-600 transition-colors">💬 <span data-cfg-text="contact.zaloDisplay">Zalo: Phòng khám TMH ABC</span></a>
+        <p>📍 <span data-cfg-text="contact.addressFull">30 Đỗ Bá, Ngũ Hành Sơn, Đà Nẵng</span></p>
+      </div>
+      <div class="flex flex-col gap-2 text-sm text-slate-800 font-semibold">
+        <p class="font-bold text-slate-900" data-cfg-text="footer.hoursHeading">Giờ hoạt động</p>
+        <p><span data-cfg-text="footer.daysAll">Tất cả các ngày</span>: <span class="font-bold text-teal-700" data-cfg-text="footer.schedule">17:00 – 21:00</span></p>
+      </div>
+    </div>
+    <!-- FIX 4: Copyright năm đúng | FIX 5: Bỏ dead links -->
+    <div class="mt-8 pt-6 border-t border-slate-200 text-center text-slate-400 text-sm" data-cfg-text="footer.copyright">
+      © 2024–2026 Phòng Khám TMH ABC. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════ FABs ═══════════════════════════════════════ -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+  <div class="fab-wrap">
+    <button class="fab fab--book" id="fab-booking" aria-label="Đặt lịch khám" data-cfg-attr-aria-label="fab.bookAriaLabel">
+      <span class="material-symbols-outlined">calendar_add_on</span>
+    </button>
+    <span class="fab-label" data-cfg-text="fab.bookLabel">Đặt lịch ngay</span>
+  </div>
+  <div class="fab-wrap">
+    <button class="fab fab--zalo" id="fab-zalo" aria-label="Nhắn Zalo" data-cfg-attr-aria-label="fab.zaloAriaLabel">
+      <span class="font-extrabold text-sm tracking-wide" data-cfg-text="fab.zaloButtonText">Zalo</span>
+    </button>
+    <span class="fab-label" data-cfg-text="fab.zaloLabel">Nhắn Zalo</span>
+  </div>
+  <div class="fab-wrap">
+    <button class="fab fab--phone" id="fab-phone" aria-label="Gọi ngay" data-cfg-attr-aria-label="fab.phoneAriaLabel">
+      <span class="material-symbols-outlined">call</span>
+    </button>
+    <span class="fab-label" data-cfg-text="fab.phoneLabel">Gọi 0856 983 929</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ BOOKING MODAL ═══════════════════════════════════════ -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm" id="booking-modal">
+  <div class="glass-card w-full max-w-lg rounded-[32px] p-8 relative">
+    <button class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors" id="close-modal">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <div class="mb-8">
+      <h2 class="text-h3 font-h3 text-primary mb-2" data-cfg-text="modal.heading">Đặt lịch hẹn</h2>
+      <p class="text-base text-on-surface-variant" data-cfg-text="modal.subtitle">Vui lòng để lại thông tin, chúng tôi sẽ liên hệ xác nhận sớm nhất.</p>
+    </div>
+    <form class="space-y-5" id="modal-form">
+      <div class="space-y-1.5">
+        <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.nameLabel">Họ và Tên *</label>
+        <input id="modal-hoTen" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" placeholder="Nguyễn Văn A" data-cfg-attr-placeholder="modal.namePlaceholder" required type="text"/>
+      </div>
+      <div class="space-y-1.5">
+        <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.phoneLabel">Số điện thoại *</label>
+        <input id="modal-soDienThoai" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" placeholder="0856 983 929" data-cfg-attr-placeholder="modal.phonePlaceholder" required type="tel"/>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1.5">
+          <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.dateLabel">Ngày hẹn</label>
+          <input id="modal-ngayHen" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" type="date"/>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.timeLabel">Giờ khám</label>
+          <select id="modal-gioKham" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" data-cfg-options="modal.timeSlots" data-cfg-options-placeholder="modal.timePlaceholder">
+            <option value="">Chọn giờ</option>
+            <option>17:00</option><option>17:30</option><option>18:00</option>
+            <option>18:30</option><option>19:00</option><option>19:30</option>
+            <option>20:00</option><option>20:30</option><option>21:00</option>
+          </select>
+        </div>
+      </div>
+      <!-- FIX 6: 4 options đồng nhất -->
+      <div class="space-y-1.5">
+        <label class="text-xs font-semibold text-outline ml-1 uppercase tracking-wider" data-cfg-text="modal.serviceLabel">Dịch vụ</label>
+        <select id="modal-dichVu" class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:ring-2 focus:ring-primary-container outline-none" data-cfg-options="serviceOptions">
+          <option>Khám tổng quát</option>
+          <option>Nội soi TMH</option>
+          <option>Điều trị Tai</option>
+          <option>Họng - Thanh quản</option>
+        </select>
+      </div>
+      <button class="cta-gold w-full py-4 rounded-xl font-bold text-lg shadow-lg mt-4" type="submit" data-cfg-text="modal.submit">Xác nhận đặt lịch</button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ SCRIPTS ═══════════════════════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── Config binder: đọc nội dung từ window.siteConfig ──
+  const cfg = window.siteConfig || {};
+  const getByPath = (obj, path) =>
+    path.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+
+  function applyConfig(root) {
+    root = root || document;
+
+    // text content
+    root.querySelectorAll('[data-cfg-text]').forEach(el => {
+      const v = getByPath(cfg, el.getAttribute('data-cfg-text'));
+      if (v != null) el.textContent = v;
+    });
+    // raw HTML (chỉ dùng cho các giá trị an toàn trong siteConfig, vd: trustReviewsHtml)
+    root.querySelectorAll('[data-cfg-html]').forEach(el => {
+      const v = getByPath(cfg, el.getAttribute('data-cfg-html'));
+      if (v != null) el.innerHTML = v;
+    });
+    // generic attribute binding: data-cfg-attr-<name>="path"
+    root.querySelectorAll('*').forEach(el => {
+      for (const attr of Array.from(el.attributes)) {
+        if (!attr.name.startsWith('data-cfg-attr-')) continue;
+        const target = attr.name.slice('data-cfg-attr-'.length);
+        const v = getByPath(cfg, attr.value);
+        if (v != null) el.setAttribute(target, v);
+      }
+    });
+    // <select> options từ array trong siteConfig
+    root.querySelectorAll('[data-cfg-options]').forEach(sel => {
+      const opts = getByPath(cfg, sel.getAttribute('data-cfg-options'));
+      if (!Array.isArray(opts)) return;
+      const placeholderKey = sel.getAttribute('data-cfg-options-placeholder');
+      const placeholder = placeholderKey ? getByPath(cfg, placeholderKey) : null;
+      sel.innerHTML = '';
+      if (placeholder) {
+        const o = document.createElement('option');
+        o.value = ''; o.textContent = placeholder;
+        sel.appendChild(o);
+      }
+      opts.forEach(text => {
+        const o = document.createElement('option');
+        o.textContent = text;
+        sel.appendChild(o);
+      });
+    });
+    // review meta: "<location> · <date>"
+    root.querySelectorAll('[data-cfg-review-meta]').forEach(el => {
+      const idx = parseInt(el.getAttribute('data-cfg-review-meta'), 10);
+      const r = (cfg.reviews || [])[idx];
+      if (r) el.textContent = `${r.location} · ${r.date}`;
+    });
+  }
+  applyConfig();
+
+  // ── FAB Zalo / Phone — link lấy từ siteConfig ──
+  const zaloFab = document.getElementById('fab-zalo');
+  if (zaloFab && cfg.contact && cfg.contact.zaloUrl) {
+    zaloFab.addEventListener('click', () => window.open(cfg.contact.zaloUrl, '_blank'));
+  }
+  const phoneFab = document.getElementById('fab-phone');
+  if (phoneFab && cfg.contact && cfg.contact.phoneHref) {
+    phoneFab.addEventListener('click', () => { window.location.href = cfg.contact.phoneHref; });
+  }
+  // Nút hero "Gọi" — bind href từ config, thay onclick hardcode
+  document.querySelectorAll('[data-cfg-call-btn]').forEach(btn => {
+    if (cfg.contact && cfg.contact.phoneHref) {
+      btn.onclick = () => { window.location.href = cfg.contact.phoneHref; };
+    }
+  });
+
+  // ── Lang toggle ──
+  const langToggle = document.getElementById('lang-toggle');
+  const translations = {
+    vi: {
+      brand_vn: cfg.brand && cfg.brand.name,
+      nav_services: cfg.nav && cfg.nav.services,
+      nav_team: cfg.nav && cfg.nav.team,
+      nav_contact: cfg.nav && cfg.nav.contact,
+      nav_book: cfg.nav && cfg.nav.book,
+      hero_title: cfg.hero && cfg.hero.title,
+      hero_subtitle: cfg.hero && cfg.hero.subtitle,
+      hero_desc: cfg.hero && cfg.hero.description,
+      hero_book: cfg.cta && cfg.cta.bookNow,
+      hero_call: cfg.cta && cfg.cta.callPhone,
+    },
+    en: cfg.translationsEN || {}
+  };
+  let currentLang = 'vi';
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'vi' ? 'en' : 'vi';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const v = translations[currentLang][key];
+      if (v) el.textContent = v;
+    });
+    const vnLabel = langToggle.querySelector('.vn-label');
+    const enLabel = langToggle.querySelector('.en-label');
+    if (currentLang === 'en') {
+      enLabel.classList.add('text-primary'); enLabel.classList.remove('text-outline');
+      vnLabel.classList.remove('text-primary'); vnLabel.classList.add('text-outline');
+    } else {
+      vnLabel.classList.add('text-primary'); vnLabel.classList.remove('text-outline');
+      enLabel.classList.remove('text-primary'); enLabel.classList.add('text-outline');
+    }
+  });
+
+  // ── Modal ──
+  const modal = document.getElementById('booking-modal');
+  const closeBtn = document.getElementById('close-modal');
+  const openModal = () => { modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; };
+  const closeModal = () => { modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = ''; };
+
+  document.getElementById('fab-booking').addEventListener('click', openModal);
+  document.querySelectorAll('.open-modal-btn').forEach(btn => btn.addEventListener('click', openModal));
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+  // ── Confetti + redirect ──
+  const triggerCelebration = () => {
+    if (typeof confetti !== 'function') return;
+    const duration = 3000, animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 200 };
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) return clearInterval(interval);
+      const p = 50 * (timeLeft / duration);
+      confetti(Object.assign({}, defaults, { particleCount: p, origin: { x: Math.random() * 0.2 + 0.1, y: Math.random() - 0.2 } }));
+      confetti(Object.assign({}, defaults, { particleCount: p, origin: { x: Math.random() * 0.2 + 0.7, y: Math.random() - 0.2 } }));
+    }, 250);
+  };
+  const showSuccess = () => { triggerCelebration(); setTimeout(() => { window.location.href = './confirmation.html'; }, 1500); };
+
+  // ── Google Sheet URL ──
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzYBHSbqNkxtWybK1uyQsdHld8tWljp8DW_vi5TKcAdfVxInO0zZ8U7O-JK3Y7MTkm3/exec';
+
+  const sendToSheet = (data) => {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(err => console.error('Sheet error:', err));
+  };
+
+  document.getElementById('modal-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendToSheet({
+      hoTen: document.getElementById('modal-hoTen').value,
+      soDienThoai: document.getElementById('modal-soDienThoai').value,
+      ngayHen: document.getElementById('modal-ngayHen').value,
+      gioKham: document.getElementById('modal-gioKham').value,
+      dichVu: document.getElementById('modal-dichVu').value
+    });
+    closeModal();
+    showSuccess();
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendToSheet({
+      hoTen: document.getElementById('contact-hoTen').value,
+      soDienThoai: document.getElementById('contact-soDienThoai').value,
+      ngayHen: '',
+      gioKham: '',
+      dichVu: document.getElementById('contact-lyDo').value
+    });
+    showSuccess();
+  });
+
+  // ── Hero form ──
+  document.querySelectorAll('.hero-confirm-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = btn.closest('.glass-card');
+      const inputs = card.querySelectorAll('input[required]');
+      let valid = true;
+      inputs.forEach(input => {
+        if (!input.value.trim()) { valid = false; input.classList.add('ring-2', 'ring-red-500'); }
+        else input.classList.remove('ring-2', 'ring-red-500');
+      });
+      if (valid) { e.preventDefault(); showSuccess(); }
+      else alert((cfg.heroForm && cfg.heroForm.validationMessage) || 'Vui lòng điền đầy đủ Họ tên và Số điện thoại');
+    });
+  });
+
+
+});
+</script>
+</body>
+</html>

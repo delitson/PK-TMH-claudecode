@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Xác nhận lịch hẹn — Phòng Khám TMH ABC</title>
+<script>
+  tailwind = { config: {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#00636e",
+          "primary-container": "#087e8b",
+          "on-primary": "#ffffff",
+          "surface": "#f6fafb",
+          "surface-container": "#ebeeef",
+          "surface-container-low": "#f1f4f5",
+          "on-surface": "#181c1d",
+          "on-surface-variant": "#3e494a",
+          "outline-variant": "#bdc8ca",
+          "outline": "#6e797b",
+          "background": "#f6fafb",
+          "on-background": "#181c1d",
+          "mint": "#00CFB4",
+          "gold": "#F0A500",
+        },
+        fontFamily: {
+          body: ["Inter", "sans-serif"],
+          heading: ["Manrope", "sans-serif"],
+        },
+      },
+    },
+  }};
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+  body { font-family: "Inter", sans-serif; }
+  .glass-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px 0 rgba(8,126,139,0.08);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6e797b;
+  }
+  .aurora-bg {
+    background:
+      radial-gradient(at 0% 0%, rgba(8,126,139,0.12) 0%, transparent 55%),
+      radial-gradient(at 100% 100%, rgba(0,207,180,0.10) 0%, transparent 55%),
+      #f6fafb;
+  }
+</style>
+</head>
+<body class="aurora-bg min-h-screen flex flex-col items-center justify-center px-4 py-12">
+
+  <!-- ── Card ── -->
+  <div class="glass-card w-full max-w-lg rounded-[32px] p-8 md:p-10 space-y-8">
+
+    <!-- ── Problem 1: Clear h1 confirmation heading ── -->
+    <div class="text-center space-y-3">
+      <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mx-auto">
+        <span class="material-symbols-outlined text-primary-container text-4xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+      </div>
+      <h1 class="font-heading text-[28px] md:text-[32px] font-extrabold text-on-surface leading-tight tracking-tight">
+        Lịch hẹn đã được<br/>xác nhận!
+      </h1>
+      <p class="text-base text-on-surface-variant">
+        Cảm ơn bạn đã đặt lịch. Phòng khám sẽ liên hệ xác nhận trong thời gian sớm nhất.
+      </p>
+    </div>
+
+    <!-- ── Problem 3: Appointment details group ── -->
+    <div class="space-y-2">
+      <p class="section-label">Thông tin lịch hẹn</p>
+      <div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/40">
+        <div class="grid grid-cols-3 divide-x divide-outline-variant/30">
+          <!-- Ngày khám -->
+          <div class="px-4 py-4 text-center space-y-1">
+            <span class="material-symbols-outlined text-primary-container text-2xl block mx-auto"
+                  style="font-variation-settings:'FILL' 1;">calendar_month</span>
+            <p class="text-[11px] font-semibold uppercase tracking-wide text-outline">Ngày khám</p>
+            <p class="text-sm font-bold text-on-surface" id="detail-date">—</p>
+          </div>
+          <!-- Giờ hẹn -->
+          <div class="px-4 py-4 text-center space-y-1">
+            <span class="material-symbols-outlined text-primary-container text-2xl block mx-auto"
+                  style="font-variation-settings:'FILL' 1;">schedule</span>
+            <p class="text-[11px] font-semibold uppercase tracking-wide text-outline">Giờ hẹn</p>
+            <p class="text-sm font-bold text-on-surface" id="detail-time">17:00–21:00</p>
+          </div>
+          <!-- Dịch vụ -->
+          <div class="px-4 py-4 text-center space-y-1">
+            <span class="material-symbols-outlined text-primary-container text-2xl block mx-auto"
+                  style="font-variation-settings:'FILL' 1;">medical_services</span>
+            <p class="text-[11px] font-semibold uppercase tracking-wide text-outline">Dịch vụ</p>
+            <p class="text-sm font-bold text-on-surface" id="detail-service">—</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Problem 3: Action buttons group ── -->
+    <div class="space-y-2">
+      <p class="section-label">Bước tiếp theo</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://calendar.google.com/calendar/r/eventedit" target="_blank" rel="noopener"
+           class="flex-1 flex items-center justify-center gap-2 border-2 border-primary-container text-primary-container bg-white hover:bg-primary-container hover:text-white transition-colors rounded-xl py-3 font-semibold text-sm">
+          <span class="material-symbols-outlined text-[18px]">event_add</span>
+          Thêm vào lịch
+        </a>
+        <a href="tel:0856983929"
+           class="flex-1 flex items-center justify-center gap-2 border-2 border-outline-variant text-on-surface-variant bg-white hover:bg-surface-container transition-colors rounded-xl py-3 font-semibold text-sm">
+          <span class="material-symbols-outlined text-[18px]">call</span>
+          Gọi xác nhận
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Problem 2: Clearly visible "Quay về trang chủ" button ── -->
+    <a href="index.html"
+       class="block w-full text-center bg-primary-container hover:bg-primary text-white font-bold text-base rounded-xl py-4 transition-colors shadow-md">
+      Quay về trang chủ
+    </a>
+
+  </div>
+
+  <!-- Hotline note -->
+  <p class="mt-6 text-sm text-on-surface-variant text-center">
+    Cần hỗ trợ? Gọi <a href="tel:0856983929" class="font-bold text-primary-container hover:underline">0856 983 929</a>
+  </p>
+
+<script>
+  // Confetti on load
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof confetti === 'function') {
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.4 } });
+    }
+
+    // Read appointment info passed via sessionStorage (if index.html stored it)
+    try {
+      const appt = JSON.parse(sessionStorage.getItem('appt') || '{}');
+      if (appt.ngayHen)  document.getElementById('detail-date').textContent    = appt.ngayHen;
+      if (appt.gioKham)  document.getElementById('detail-time').textContent    = appt.gioKham;
+      if (appt.dichVu)   document.getElementById('detail-service').textContent = appt.dichVu;
+    } catch(e) {}
+  });
+</script>
+</body>
+</html>
