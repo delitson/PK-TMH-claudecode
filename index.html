@@ -227,6 +227,18 @@
   #booking-modal.modal-leave            { animation: backdropFadeOut 0.20s ease         forwards; }
   #booking-modal.modal-leave .modal-card { animation: cardSlideDown   0.20s ease         forwards; }
 
+  /* ── Services section — visual hierarchy ── */
+  .service-card {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.09), 0 1px 6px rgba(0,0,0,0.04) !important;
+  }
+  .service-card h3 {
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+  .svc-desc  { color: #62737a; }
+  .svc-check { color: #e8a020 !important; font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24 !important; }
+
   /* Stats row */
   .stat-num {
     font-family: "Manrope", sans-serif;
@@ -327,47 +339,47 @@
       <h2 class="text-[44px] font-black text-primary-container mb-4 h2-accent leading-tight" data-cfg-text="servicesSection.heading">Dịch vụ tại Phòng Khám Tai Mũi Họng ABC</h2>
       <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto mt-4" data-cfg-text="servicesSection.subtitle">Phác đồ điều trị hiện đại, thiết bị chuẩn quốc tế mang lại kết quả chính xác nhất.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-bento-gap">
-      <div class="md:col-span-2 glass-card p-10 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-2 glass-card service-card p-10 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
         <div class="z-10 relative">
-          <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
+          <div class="clay-icon w-[70px] h-[70px] flex items-center justify-center mb-6" style="background:#F5A623;">
             <span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;" data-cfg-text="services.0.icon">hearing</span>
           </div>
           <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.0.title">Khám &amp; Điều Trị Tai</h3>
-          <p class="text-base text-on-surface-variant max-w-md" data-cfg-text="services.0.description">Điều trị viêm tai giữa, ù tai, nghe kém ở người già và trẻ em bằng công nghệ vi phẫu hiện đại.</p>
+          <p class="text-base svc-desc max-w-md" data-cfg-text="services.0.description">Điều trị viêm tai giữa, ù tai, nghe kém ở người già và trẻ em bằng công nghệ vi phẫu hiện đại.</p>
           <ul class="mt-6 space-y-2 text-sm font-semibold text-primary">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> <span data-cfg-text="services.0.features.0">Đo thính lực chuẩn xác</span></li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> <span data-cfg-text="services.0.features.1">Vệ sinh tai bằng máy hút</span></li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm svc-check">check_circle</span> <span data-cfg-text="services.0.features.0">Đo thính lực chuẩn xác</span></li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm svc-check">check_circle</span> <span data-cfg-text="services.0.features.1">Vệ sinh tai bằng máy hút</span></li>
           </ul>
         </div>
       </div>
-      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
-        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+      <div class="glass-card service-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
           <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.1.icon">air</span>
         </div>
         <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.1.title">Mũi - Xoang</h3>
-        <p class="text-base text-on-surface-variant" data-cfg-text="services.1.description">Điều trị viêm xoang mạn tính, polyp mũi, lệch vách ngăn bằng nội soi.</p>
+        <p class="text-base svc-desc" data-cfg-text="services.1.description">Điều trị viêm xoang mạn tính, polyp mũi, lệch vách ngăn bằng nội soi.</p>
       </div>
-      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
-        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+      <div class="glass-card service-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
           <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.2.icon">voice_over_off</span>
         </div>
         <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.2.title">Họng - Thanh quản</h3>
-        <p class="text-base text-on-surface-variant" data-cfg-text="services.2.description">Cắt Amidan, nạo VA bằng phương pháp Coblator ít đau, phục hồi nhanh.</p>
+        <p class="text-base svc-desc" data-cfg-text="services.2.description">Cắt Amidan, nạo VA bằng phương pháp Coblator ít đau, phục hồi nhanh.</p>
       </div>
-      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
-        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+      <div class="glass-card service-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
           <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.3.icon">videocam</span>
         </div>
         <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.3.title">Nội soi TMH</h3>
-        <p class="text-base text-on-surface-variant" data-cfg-text="services.3.description">Sử dụng ống nội soi mềm Olympus mang lại hình ảnh sắc nét, không gây khó chịu.</p>
+        <p class="text-base svc-desc" data-cfg-text="services.3.description">Sử dụng ống nội soi mềm Olympus mang lại hình ảnh sắc nét, không gây khó chịu.</p>
       </div>
-      <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
-        <div class="clay-icon w-14 h-14 flex items-center justify-center mb-6" style="background:#F5A623;">
+      <div class="glass-card service-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+        <div class="clay-icon w-16 h-16 flex items-center justify-center mb-6" style="background:#F5A623;">
           <span class="material-symbols-outlined text-white text-3xl" data-cfg-text="services.4.icon">neurology</span>
         </div>
         <h3 class="text-h3 font-h3 mb-3 text-on-surface" data-cfg-text="services.4.title">Điều trị chuyên sâu</h3>
-        <p class="text-base text-on-surface-variant" data-cfg-text="services.4.description">Tư vấn và điều trị các bệnh lý phức tạp vùng đầu mặt cổ.</p>
+        <p class="text-base svc-desc" data-cfg-text="services.4.description">Tư vấn và điều trị các bệnh lý phức tạp vùng đầu mặt cổ.</p>
       </div>
     </div>
   </section>
