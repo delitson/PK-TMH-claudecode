@@ -600,27 +600,47 @@
     </div>
 
     <!-- Map -->
-    <div class="mt-12 flex flex-col md:flex-row rounded-[40px] overflow-hidden bg-white shadow-lg border border-[#098B6B]/10">
-      <div class="md:w-3/5 h-[400px] w-full">
-        <iframe allowfullscreen height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.110332822556!2d108.24357637583688!3d16.05976508461706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177f0a8d6715%3A0x673993414918e77a!2zMzAgxJDhu5YgQsOhLCBC4bqvYyBN4bu5IFBow7osIE5nxakgSGFuaCBTxqFuLCDEkMOgIE7hurVuZyA1NTAwMDAsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1715852434567!5m2!1sen!2s"
-          data-cfg-attr-src="contact.mapEmbedSrc"
-          style="border:0;" width="100%"></iframe>
-      </div>
-      <div class="md:w-2/5 p-12 flex flex-col justify-center">
-        <h3 class="text-[22px] font-bold text-[#1a1a2e] mb-6" data-cfg-text="locationCard.heading">Vị trí của chúng tôi</h3>
-        <div class="space-y-6">
-          <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#098B6B]" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
-            <div>
-              <p class="font-bold text-lg text-[#1a1a2e]" data-cfg-text="locationCard.addressLine1">30 Đỗ Bá, Ngũ Hành Sơn</p>
-              <p class="text-[#4a5e59]" data-cfg-text="locationCard.addressLine2">Đà Nẵng, Việt Nam</p>
+    <div class="mt-16 rounded-[32px] overflow-hidden shadow-xl border-2 border-[#098B6B]/15">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-3/5 h-[420px] w-full">
+          <iframe allowfullscreen height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.110332822556!2d108.24357637583688!3d16.05976508461706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177f0a8d6715%3A0x673993414918e77a!2zMzAgxJDhu5YgQsOhLCBC4bqvYyBN4bu5IFBow7osIE5nxakgSGFuaCBTxqFuLCDEkMOgIE7hurVuZyA1NTAwMDAsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1715852434567!5m2!1sen!2s"
+            data-cfg-attr-src="contact.mapEmbedSrc"
+            style="border:0;" width="100%"></iframe>
+        </div>
+        <div class="md:w-2/5 bg-white p-10 md:p-12 flex flex-col justify-center">
+          <h3 class="text-[24px] font-extrabold text-[#1a1a2e] mb-8" data-cfg-text="locationCard.heading">Vị trí của chúng tôi</h3>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-[#098B6B] text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+              <div>
+                <p class="font-bold text-[17px] text-[#1a1a2e]" data-cfg-text="locationCard.addressLine1">30 Đỗ Bá, Ngũ Hành Sơn</p>
+                <p class="text-[#4a5e59] text-[15px]" data-cfg-text="locationCard.addressLine2">Đà Nẵng, Việt Nam</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-[#098B6B] text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">near_me</span>
+              <p class="text-[#4a5e59] text-[15px]" data-cfg-text="locationCard.note">Cách Cầu Rồng 5 phút di chuyển. Có chỗ đỗ xe ô tô rộng rãi.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-[#098B6B] text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">schedule</span>
+              <div>
+                <p class="font-bold text-[17px] text-[#1a1a2e]">Giờ khám bệnh</p>
+                <p class="text-[#4a5e59] text-[15px]">Thứ 2 — Chủ nhật: <span class="font-bold text-[#098B6B]">17:00 – 21:00</span></p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-[#098B6B] text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">call</span>
+              <div>
+                <p class="font-bold text-[17px] text-[#1a1a2e]">Hotline</p>
+                <p class="text-[#4a5e59] text-[15px]">0856 983 929</p>
+              </div>
             </div>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-[#098B6B]" style="font-variation-settings: 'FILL' 1;">near_me</span>
-            <p class="text-[#4a5e59]" data-cfg-text="locationCard.note">Cách Cầu Rồng 5 phút di chuyển. Có chỗ đỗ xe ô tô rộng rãi.</p>
-          </div>
+          <a href="https://maps.app.goo.gl/search/Phòng+khám+TMH+ABC+Đà+Nẵng" data-cfg-attr-href="contact.mapsUrl" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 cta-gold px-6 py-3 rounded-full font-bold text-sm shadow-md w-fit">
+            <span class="material-symbols-outlined text-[18px]">directions</span>
+            Chỉ đường đến phòng khám
+          </a>
         </div>
       </div>
     </div>
@@ -631,33 +651,47 @@
 </main>
 
 <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
-<!-- FIX 3, 4, 5 -->
-<footer class="w-full bg-[#1a1a2e] border-t border-[#1a1a2e]">
-  <div class="max-w-7xl mx-auto px-10 py-14">
+<footer class="w-full bg-[#FFF8EC] border-t border-[#F4A823]/15 mt-16">
+  <div class="max-w-7xl mx-auto px-10 py-12">
     <div class="flex flex-col md:flex-row justify-between items-start gap-10">
       <div class="space-y-4 max-w-sm">
         <div class="flex items-center gap-3">
           <img src="LOGO%20TMH_1@3x.png" alt="Phòng Khám TMH ABC" class="brand-logo--lg" data-cfg-attr-src="brand.logo" data-cfg-attr-alt="brand.logoAlt"/>
           <div class="leading-tight">
-            <div class="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#5DD5BE]" data-cfg-text="brand.namePrefix">Phòng Khám</div>
-            <div class="text-lg font-black text-white" data-cfg-text="brand.name">TAI MŨI HỌNG ABC</div>
+            <div class="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#098B6B]" data-cfg-text="brand.namePrefix">Phòng Khám</div>
+            <div class="text-lg font-black text-[#1a1a2e]" data-cfg-text="brand.name">TAI MŨI HỌNG ABC</div>
           </div>
         </div>
-        <p class="text-white/70 text-sm leading-relaxed font-medium"><span data-cfg-text="footer.descriptionPrefix">Chuyên khoa Tai Mũi Họng tại Đà Nẵng — </span><em class="text-[#1DBEAA] font-bold not-italic" data-cfg-text="footer.descriptionEm">Đồng hành chăm sóc, an tâm điều trị.</em></p>
+        <p class="text-[#4a5e59] text-sm leading-relaxed font-medium"><span data-cfg-text="footer.descriptionPrefix">Chuyên khoa Tai Mũi Họng tại Đà Nẵng — </span><em class="text-[#098B6B] font-bold not-italic" data-cfg-text="footer.descriptionEm">Đồng hành chăm sóc, an tâm điều trị.</em></p>
       </div>
-      <div class="flex flex-col gap-2 text-sm text-white/80 font-semibold">
-        <p class="font-bold text-white" data-cfg-text="footer.contactHeading">Liên hệ</p>
-        <a href="tel:0856983929" data-cfg-attr-href="contact.phoneHref" class="hover:text-[#1DBEAA] transition-colors">📞 <span data-cfg-text="contact.phone">0856 983 929</span></a>
-        <a href="https://zalo.me/0856983929" data-cfg-attr-href="contact.zaloUrl" target="_blank" class="hover:text-[#1DBEAA] transition-colors">💬 <span data-cfg-text="contact.zaloDisplay">Zalo: Phòng khám TMH ABC</span></a>
-        <p>📍 <span data-cfg-text="contact.addressFull">30 Đỗ Bá, Ngũ Hành Sơn, Đà Nẵng</span></p>
+      <div class="flex flex-col gap-2.5 text-sm text-[#1a1a2e]/80 font-semibold">
+        <p class="font-bold text-[#1a1a2e]" data-cfg-text="footer.contactHeading">Liên hệ</p>
+        <a href="tel:0856983929" data-cfg-attr-href="contact.phoneHref" class="hover:text-[#098B6B] transition-colors flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#F4A823] text-lg" style="font-variation-settings: 'FILL' 1;">call</span>
+          <span data-cfg-text="contact.phone">0856 983 929</span>
+        </a>
+        <a href="https://zalo.me/0856983929" data-cfg-attr-href="contact.zaloUrl" target="_blank" class="hover:text-[#098B6B] transition-colors flex items-center gap-2">
+          <span class="w-[18px] h-[18px] bg-[#0068ff] rounded text-white text-[10px] font-bold flex items-center justify-center">Z</span>
+          <span data-cfg-text="contact.zaloDisplay">Zalo: Phòng khám TMH ABC</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#F4A823] text-lg" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+          <span data-cfg-text="contact.addressFull">30 Đỗ Bá, Ngũ Hành Sơn, Đà Nẵng</span>
+        </div>
       </div>
-      <div class="flex flex-col gap-2 text-sm text-white/80 font-semibold">
-        <p class="font-bold text-white" data-cfg-text="footer.hoursHeading">Giờ hoạt động</p>
-        <p><span data-cfg-text="footer.daysAll">Tất cả các ngày</span>: <span class="font-bold text-[#1DBEAA]" data-cfg-text="footer.schedule">17:00 – 21:00</span></p>
+      <div class="flex flex-col gap-2.5 text-sm text-[#1a1a2e]/80 font-semibold">
+        <p class="font-bold text-[#1a1a2e]" data-cfg-text="footer.hoursHeading">Giờ hoạt động</p>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#F4A823] text-lg" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+          <span><span data-cfg-text="footer.daysAll">Tất cả các ngày</span>: <span class="font-bold text-[#098B6B]" data-cfg-text="footer.schedule">17:00 – 21:00</span></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#F4A823] text-lg" style="font-variation-settings: 'FILL' 1;">info</span>
+          <span class="text-[#4a5e59]">Vui lòng đặt lịch trước để tránh chờ đợi</span>
+        </div>
       </div>
     </div>
-    <!-- FIX 4: Copyright năm đúng | FIX 5: Bỏ dead links -->
-    <div class="mt-8 pt-6 border-t border-white/10 text-center text-white/40 text-sm" data-cfg-text="footer.copyright">
+    <div class="mt-8 pt-6 border-t border-[#F4A823]/15 text-center text-[#1a1a2e]/40 text-sm" data-cfg-text="footer.copyright">
       © 2024–2026 Phòng Khám TMH ABC. All rights reserved.
     </div>
   </div>
