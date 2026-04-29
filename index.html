@@ -318,26 +318,37 @@
 
   <!-- ═══════════════════════════════════════ TRUST BAR ═══════════════════════════════════════ -->
   <section class="bg-on-surface py-8 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-8 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white">
-      <div class="flex items-center gap-3">
-        <span class="stat-num text-[#F0A500] flex items-baseline gap-1.5">
-          <span data-cfg-text="stats.rating">4.9</span>
-          <span class="material-symbols-outlined text-[#F0A500] text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
-        </span>
-        <span class="text-sm text-white/70 font-medium leading-tight" data-cfg-html="stats.trustReviewsHtml">149+ Đánh giá<br/>trên Google</span>
-      </div>
-      <div class="h-10 w-px bg-white/15 hidden md:block"></div>
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-3xl text-[#F0A500]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-        <span class="font-bold text-sm md:text-base" data-cfg-text="stats.trustCertified">Chứng chỉ Bộ Y tế Việt Nam</span>
-      </div>
-      <div class="h-10 w-px bg-white/15 hidden md:block"></div>
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-3xl text-[#F0A500]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
-        <span class="font-bold text-sm md:text-base" data-cfg-text="stats.trustSchedule">Mở 7 ngày/tuần · 17:00–21:00</span>
-      </div>
+  <div class="max-w-7xl mx-auto px-8 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white">
+    <!-- ⭐ 4.9 star + reviews -->
+    <div class="flex items-center gap-3">
+      <span class="stat-num text-[#F0A500] flex items-baseline gap-1.5">
+        <span data-cfg-text="stats.rating">4.9</span>
+        <span class="material-symbols-outlined text-[#F0A500] text-2xl"
+              style="font-variation-settings: 'FILL' 1;">star</span>
+      </span>
+      <span class="text-sm text-teal-200 font-medium leading-tight"
+            data-cfg-html="stats.trustReviewsHtml">149+ Đánh giá<br/>trên Google</span>
     </div>
-  </section>
+    <!-- Divider -->
+    <div class="h-10 w-px bg-white/15 hidden md:block"></div>
+    <!-- ✅ Chứng chỉ Bộ Y tế -->
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-3xl text-[#F0A500]"
+            style="font-variation-settings: 'FILL' 1;">verified_user</span>
+      <span class="font-bold text-sm md:text-base text-teal-300"
+            data-cfg-text="stats.trustCertified">Chứng chỉ Bộ Y tế Việt Nam</span>
+    </div>
+    <!-- Divider -->
+    <div class="h-10 w-px bg-white/15 hidden md:block"></div>
+    <!-- 📅 Mở 7 ngày/tuần -->
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-3xl text-[#F0A500]"
+            style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+      <span class="font-bold text-sm md:text-base text-teal-300"
+            data-cfg-text="stats.trustSchedule">Mở 7 ngày/tuần · 17:00–21:00</span>
+    </div>
+  </div>
+</section>
 
   <!-- ═══════════════════════════════════════ SERVICES ═══════════════════════════════════════ -->
   <section class="py-section-padding max-w-7xl mx-auto px-8" id="services">
